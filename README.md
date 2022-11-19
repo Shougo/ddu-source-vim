@@ -20,17 +20,17 @@ https://github.com/Shougo/ddu.vim
 " Use neomru.vim as ddu source
 " https://github.com/Shougo/neomru.vim
 function! NeoMruSource()
-  return map(neomru#_gather_file_candidates(), { _, path -> {
-        \   'word': path,
-        \   'kind': 'file',
-        \   'action': {
-        \      'path': path,
-        \      'isDirectory': isdirectory(path),
+  return map(neomru#_gather_file_candidates(), { _, path -> #{
+        \   word: path,
+        \   kind: 'file',
+        \   action: #{
+        \      path: path,
+        \      isDirectory: isdirectory(path),
         \   },
         \ }})
 endfunction
 
 call ddu#start({'sources': [
-\   {'name': 'vim', 'params': {'func': 'NeoMruSource'}},
+\   #{ name: 'vim', params: #{ func: 'NeoMruSource' } },
 \ ]})
 ```
