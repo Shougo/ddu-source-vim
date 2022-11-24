@@ -12,7 +12,7 @@ type Params = {
 export type ActionData = Record<never, never>;
 
 export class Source extends BaseSource<Params> {
-  gather(args: {
+  override gather(args: {
     denops: Denops;
     context: Context;
     sourceParams: Params;
@@ -29,7 +29,7 @@ export class Source extends BaseSource<Params> {
     });
   }
 
-  params(): Params {
+  override params(): Params {
     return {
       func: "",
     };
