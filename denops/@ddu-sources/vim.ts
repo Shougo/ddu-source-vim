@@ -1,9 +1,9 @@
 import {
   BaseSource,
-  Context,
-  Item,
-} from "https://deno.land/x/ddu_vim@v3.5.0/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v3.5.0/deps.ts";
+  type Context,
+  type Item,
+} from "jsr:@shougo/ddu-vim@^5.0.0/types";
+import type { Denops } from "jsr:@denops/core@^7.0.0";
 
 type Params = {
   func: string;
