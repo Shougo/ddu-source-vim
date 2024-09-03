@@ -1,8 +1,6 @@
-import {
-  BaseSource,
-  type Context,
-  type Item,
-} from "jsr:@shougo/ddu-vim@^5.0.0/types";
+import { type Context, type Item } from "jsr:@shougo/ddu-vim@~6.1.0/types";
+import { BaseSource } from "jsr:@shougo/ddu-vim@~6.1.0/source";
+
 import type { Denops } from "jsr:@denops/core@^7.0.0";
 
 type Params = {
@@ -21,7 +19,8 @@ export class Source extends BaseSource<Params> {
       async start(controller) {
         if (args.sourceParams.func != "") {
           const items = await args.denops.call(
-            args.sourceParams.func) as Item<ActionData>[]
+            args.sourceParams.func,
+          ) as Item<ActionData>[];
           controller.enqueue(items);
         }
         controller.close();
