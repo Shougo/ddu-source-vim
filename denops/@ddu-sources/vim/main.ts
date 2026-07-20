@@ -17,12 +17,15 @@ export class Source extends BaseSource<Params> {
   }): ReadableStream<Item<ActionData>[]> {
     return new ReadableStream({
       async start(controller) {
-        if (args.sourceParams.func != "") {
-          const items = await args.denops.call(
-            args.sourceParams.func,
-          ) as Item<ActionData>[];
-          controller.enqueue(items);
+        if (args.sourceParams.func === "") {
+          controller.close();
+          return;
         }
+
+        const items = await args.denops.call(
+          args.sourceParams.func,
+        ) as Item<ActionData>[];
+        controller.enqueue(items);
         controller.close();
       },
     });
