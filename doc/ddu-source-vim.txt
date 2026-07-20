@@ -3,7 +3,7 @@
 Author: Shougo <Shougo.Matsu at gmail.com>
 License: MIT license
 
-CONTENTS					*ddu-source-vim-contents*
+CONTENTS                                             *ddu-source-vim-contents*
 
 Introduction		|ddu-source-vim-introduction|
 Install			|ddu-source-vim-install|
@@ -12,13 +12,13 @@ Params			|ddu-source-vim-params|
 
 
 ==============================================================================
-INTRODUCTION				*ddu-source-vim-introduction*
+INTRODUCTION                                     *ddu-source-vim-introduction*
 
 This source collects items from Vim script functions.
 
 
 ==============================================================================
-INSTALL						*ddu-source-vim-install*
+INSTALL                                               *ddu-source-vim-install*
 
 Please install both "ddu.vim" and "denops.vim".
 
@@ -27,8 +27,8 @@ https://github.com/vim-denops/denops.vim
 
 
 ==============================================================================
-EXAMPLES					*ddu-source-vim-examples*
->
+EXAMPLES                                             *ddu-source-vim-examples*
+>vim
 	" Use neomru.vim as ddu source
 	" https://github.com/Shougo/neomru.vim
 	function! NeoMruSource()
@@ -48,9 +48,9 @@ EXAMPLES					*ddu-source-vim-examples*
 <
 
 ==============================================================================
-PARAMS						*ddu-source-vim-params*
+PARAMS                                                 *ddu-source-vim-params*
 
-					  *ddu-source-vim-param-func*
+                                                   *ddu-source-vim-param-func*
 func	(string)
 		Vim script function name.
 		The function must return ddu source
